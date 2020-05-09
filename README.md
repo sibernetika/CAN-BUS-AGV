@@ -1,14 +1,17 @@
 # CAN-BUS-AGV
 
 ### project based on research on LPDP Rispro (Autonomous Port Container Truck)
-**partner : PT BAMEC**
-**role : Navigation and Control Development**
-**Developed by : Ade Rustandi & Husnul Amri**
+***
+partner : PT BAMEC
+role : Navigation and Control Development
+Developed by : Ade Rustandi & Husnul Amri
+***
 
 **old system architecture :**
 ![Old system architecture](https://github.com/aderustandi/CAN-BUS-AGV/blob/master/Data/Architecture%20System/New%20Structure-Page-1.png)
 
 **Need to replace the ethernet communication with CAN-BUS protocol (asynchronous) --> automotive standard**
+
 in order to achieve the final goal, it is needed to learn further about CAN BUS communication system, from the basic to the advance. then, the learning progress is break to some part of progress : 
 1. Establish CAN-BUS communication using Arduino (1 master and some slave)
    - [x] Send some command/string "hello world" to another arduino using CAN-BUS
