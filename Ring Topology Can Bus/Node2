@@ -9,6 +9,18 @@ MCP2515 mcp2515(10);
 
 
 void setup() {
+
+  while (!Serial);
+  Serial.begin(115200);
+  
+  mcp2515.reset();
+  mcp2515.setBitrate(CAN_125KBPS);
+  mcp2515.setNormalMode();
+  
+  Serial.println("Example: Write to CAN");
+}
+
+void loop() {
   canMsg1.can_id  = 0x0F6;
   canMsg1.can_dlc = 8;
   canMsg1.data[0] = 0x8E;
@@ -42,17 +54,6 @@ void setup() {
 //  canMsg3.data[6] = 0x19;
 //  canMsg3.data[7] = 0x00;
   
-  while (!Serial);
-  Serial.begin(115200);
-  
-  mcp2515.reset();
-  mcp2515.setBitrate(CAN_125KBPS);
-  mcp2515.setNormalMode();
-  
-  Serial.println("Example: Write to CAN");
-}
-
-void loop() {
   mcp2515.sendMessage(&canMsg1);
 //  mcp2515.sendMessage(&canMsg2);
 //  mcp2515.sendMessage(&canMsg3);
